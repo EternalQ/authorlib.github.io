@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lit-portal</title>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" /> -->
+    <link rel="stylesheet" href="scripts/animate/animate.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/cssReset.css">
+    <script src="https://use.fontawesome.com/5756db0fd7.js"></script>
+    <script src="https://kit.fontawesome.com/7c6570d43b.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="scripts/parallax.js-1.5.0/parallax.min.js"></script>
+</head>
+
+<body class="body">
+    <div class="wrapper">
+        <!-- Fixed header with animting -->
+        <header>
+
+            <div class="header-wrapper top">
+
+                <div class="logo">
+                    <!-- <img src="" alt="logo image" class="logo-img"> -->
+                    <i class="fas fa-book-open    "></i>
+                </div>
+
+                <!-- Site navigation -->
+                <nav>
+                    <ul>
+                        <li><a class="nav-link" href="#">главная</a></li>
+                        <li><a class="nav-link" href="#">об авторе</a></li>
+                        <li><a class="nav-link" href="#">книги</a></li>
+                        <li><a class="nav-link" href="#">связь</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+
+        </header>
+
+        <div class="parallax banner" data-parallax="scroll" data-speed="0.3" data-image-src="/resources/lib.jpg">
+            <div class="banner-conteiner">
+                <h1 class="banner-item "><span class="color">authors</span> library
+                </h1>
+                <p class="banner-item ">Книжный <span class="color">дом</span></p>
+
+                <!-- СДЕЛАТЬ НАВИГАЦИЮ!!!!!!!!! -->
+                <a href="#about" class="button bn1">about</a>
+                <!-- <a href="#" class="button bn2"></a> -->
+            </div>
+        </div>
+
+        <section class="content">
+
+            <section id="about" class="about">
+                <div class="about-wrapper wrap">
+                    <h3 class="title">о нас</h3>
+
+                    <div class="about-text">
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam commodi quibusdam
+                            molestiae placeat, cumque quidem. Voluptas placeat rem dolores excepturi dignissimos
+                            tenetur illo cum. Repellat, corrupti. Ipsum iure quibusdam consectetur.
+                            Eos fuga quam nulla, neque perspiciatis non iure sit ipsa nisi voluptas maiores rem
+                            quidem omnis porro asperiores culpa vero reprehenderit eveniet. Alias aut voluptatem
+                            necessitatibus dolore quaerat quidem praesentium!
+                            Dolore quibusdam minima adipisci excepturi, eligendi, sed unde, impedit provident iusto
+                            quisquam nobis non commodi! Ex at harum obcaecati, odio dolores tempora amet repellat
+                            consequatur in illum, dolore tenetur. Eaque.</p>
+
+                        <img src="resources/sobaken.jpg" alt="reading" class="book-img">
+                    </div>
+                </div>
+            </section>
+
+            <section id="service" class="service">
+                <div class="service-wrapper wrap">
+                    <h3 class="title">Услуги</h3>
+
+                    <div class="services">
+                        <!-- книги сайта -->
+                        <a href="#" class="order our-authors">
+                            <i class="fas fa-book-reader"></i>
+                            <h3 class="order-title">Наши книги</h3>
+                            <p class="order-discrip">Мы предоставляем эксклюзивную возможность заказать печатные книги
+                                сотрудничающих с нами авторов</p>
+                        </a>
+
+                        <!-- пользовательские книги -->
+                        <a href="#" class="order custom-book">
+                            <i class="fas fa-feather-alt"></i>
+                            <h3 class="order-title">Ваши книги</h3>
+                            <p class="order-discrip">Если у вас есть книга в электронном варианте, которую вы бы хотели
+                                видеть напечатонной, мы вам поможем</p>
+                        </a>
+
+                        <!-- для авторов -->
+                        <a href="#" class="order new-author">
+                            <i class="far fa-handshake"></i>
+                            <h3 class="order-title">Новый автор?</h3>
+                            <p class="order-discrip">Если Вы автор мы готовы предоставить наши возможности для
+                                распространения ваших работ</p>
+                        </a>
+
+                    </div>
+                </div>
+            </section>
+
+            <section id="authors" class="authors">
+                <div class="authors-wrapper wrap">
+                    <h3 class="title">наши авторы</h3>
+
+                    <div class="atrs">
+                        <div class="atr">
+                            <img src="resources/dostoevskii.jpg" alt="dostoevsii" class="atr-img">
+                            <p class="atr-name">Фёдор Достоевский</p>
+                        </div>
+
+                        <div class="atr">
+                            <img src="resources/chehov.jpg" alt="chehov" class="atr-img">
+                            <p class="atr-name">Антон Чехов</p>
+                        </div>
+
+                        <div class="atr">
+                            <img src="resources/pushkin.jpg" alt="pushkin" class="atr-img">
+                            <p class="atr-name">Александр Пушкин</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="merch" class="merch">
+                <div class="merch-wrapper wrap">
+                    <h3 class="title">Товары</h3>
+                </div>
+            </section>
+
+        </section>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/javascript" src="scripts/animate/jquery.waypoints.min.js"></script>
+    <script type="text/javascript" src="scripts/animate/animate-css.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+
+</html>
