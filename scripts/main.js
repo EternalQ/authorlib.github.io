@@ -1,12 +1,12 @@
 $(document).ready(function () {
 
-    $(".banner-item").animatedX("fadeInDown");
-    $(".button").animatedX("fadeIn", "fadeOut");
+    $(".banner-item")   .animatedX("fadeInDown", "fadeOut");
+    $(".button")        .animatedX("fadeIn", "fadeOut");
 
-    $(".title").animatedX("fadeInDown", "fadeOut")
-    $(".about-text").animatedX("fadeInRight", "fadeOutLeft");
-    $(".services").animatedX("fadeInLeft", "fadeOutRight");
-    $(".atrs").animatedX("fadeInRight", "fadeOutLeft");
+    $(".title")         .animatedX("fadeInDown", "fadeOut")
+    $(".about-text")    .animatedX("fadeInRight", "fadeOutLeft");
+    $(".services")      .animatedX("fadeInLeft", "fadeOutRight");
+    $(".atrs")          .animatedX("fadeInRight", "fadeOutLeft");
 
     $(document).scroll(function () {
 
