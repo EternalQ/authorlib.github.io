@@ -4,13 +4,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lit-portal</title>
+    <title>Authors Library</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .preloader {
+            /*фиксированное позиционирование*/
+            position: fixed;
+            /* координаты положения */
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            /* фоновый цвет элемента */
+            background: #e0e0e0;
+            /* размещаем блок над всеми элементами на странице (это значение должно быть больше, чем у любого другого позиционированного элемента на странице) */
+            z-index: 1001;
+        }
+
+        .preloader__row {
+            position: relative;
+            top: 50%;
+            left: 50%;
+            width: 70px;
+            height: 70px;
+            margin-top: -35px;
+            margin-left: -35px;
+            text-align: center;
+            animation: preloader-rotate 2s infinite linear;
+        }
+
+        .preloader__item {
+            position: absolute;
+            display: inline-block;
+            top: 0;
+            background-color: #337ab7;
+            border-radius: 100%;
+            width: 35px;
+            height: 35px;
+            animation: preloader-bounce 2s infinite ease-in-out;
+        }
+
+        .preloader__item:last-child {
+            top: auto;
+            bottom: 0;
+            animation-delay: -1s;
+        }
+
+        @keyframes preloader-rotate {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes preloader-bounce {
+
+            0%,
+            100% {
+                transform: scale(0);
+            }
+
+            50% {
+                transform: scale(1);
+            }
+        }
+
+        .loaded_hiding .preloader {
+            transition: 0.3s opacity;
+            opacity: 0;
+        }
+
+        .loaded .preloader {
+            display: none;
+        }
+    </style>
+    
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" /> -->
-    <link rel="stylesheet" href="scripts/animate/animate.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="scripts/animate/animate.css">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/cssReset.css">
+    <link rel="stylesheet" href="scripts/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css">
     <script src="https://use.fontawesome.com/5756db0fd7.js"></script>
     <script src="https://kit.fontawesome.com/7c6570d43b.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -18,6 +95,12 @@
 </head>
 
 <body class="body">
+    <div class="preloader">
+        <div class="preloader__row">
+            <div class="preloader__item"></div>
+            <div class="preloader__item"></div>
+        </div>
+    </div>
     <div class="wrapper">
         <!-- Fixed header with animting -->
         <header>
@@ -50,13 +133,14 @@
                 <p class="banner-item ">Книжный <span class="color">дом</span></p>
 
                 <!-- СДЕЛАТЬ НАВИГАЦИЮ!!!!!!!!! -->
-                <a href="#about" class="button bn1">about</a>
+                <!-- <a href="#about" class="button bn1">about</a> -->
                 <!-- <a href="#" class="button bn2"></a> -->
             </div>
         </div>
 
         <section class="content">
 
+            <!-- раздел информации -->
             <section id="about" class="about">
                 <div class="about-wrapper wrap">
                     <h3 class="title">о нас</h3>
@@ -77,6 +161,7 @@
                 </div>
             </section>
 
+            <!-- раздел услуг -->
             <section id="service" class="service">
                 <div class="service-wrapper wrap">
                     <h3 class="title">Услуги</h3>
@@ -110,6 +195,7 @@
                 </div>
             </section>
 
+            <!-- раздел сотрудников -->
             <section id="authors" class="authors">
                 <div class="authors-wrapper wrap">
                     <h3 class="title">наши авторы</h3>
@@ -133,83 +219,37 @@
                 </div>
             </section>
 
+            <!-- раздел товаров -->
             <section id="merch" class="merch">
                 <div class="merch-wrapper wrap">
                     <h3 class="title">Товары</h3>
 
-                    <div class="goods">
-                        <div class="product">
-                            <div class="img-conteiner">
-                                <img class="product-img" src="https://ozon-st.cdn.ngenix.net/multimedia/1021359122.jpg" alt="prod" srcset="">
-                                <div class="cont">
-                                    <p>price</p>
-                                    <a href="" class="button">300$</a>
-                                </div>
-                            </div>
-                            <div class="product-descrip">
-                                <p class="book-title">Вишнёвый сад</p>
-                                <p class="book-author">А. П. Чехов</p>
-                            </div>
-                        </div>
+                    <!-- слайдер owl carousel -->
+                    <div class="owl-carousel goods">
 
                         <div class="product">
-                            <img class="product-img" src="" alt="prod" srcset="">
-                            <div class="product-descrip">
-                                <p class="book-author"></p>
-                                <p class="book-title"></p>
-                                <div class="buy-price">
-                                    <a href="" class="buy-book"></a>
-                                    <p class="price"></p>
-                                </div>
-                            </div>
+                            <img style="width: 100%; height: 100%;"
+                                src="https://ozon-st.cdn.ngenix.net/multimedia/1021359122.jpg" alt="prod" srcset="">
                         </div>
-
                         <div class="product">
-                            <img class="product-img" src="" alt="prod" srcset="">
-                            <div class="product-descrip">
-                                <p class="book-author"></p>
-                                <p class="book-title"></p>
-                                <div class="buy-price">
-                                    <a href="" class="buy-book"></a>
-                                    <p class="price"></p>
-                                </div>
-                            </div>
+                            <img style="width: 100%; height: 100%;"
+                                src="https://ozon-st.cdn.ngenix.net/multimedia/1021359122.jpg" alt="prod" srcset="">
                         </div>
-
                         <div class="product">
-                            <img class="product-img" src="" alt="prod" srcset="">
-                            <div class="product-descrip">
-                                <p class="book-author"></p>
-                                <p class="book-title"></p>
-                                <div class="buy-price">
-                                    <a href="" class="buy-book"></a>
-                                    <p class="price"></p>
-                                </div>
-                            </div>
+                            <img style="width: 100%; height: 100%;"
+                                src="https://ozon-st.cdn.ngenix.net/multimedia/1021359122.jpg" alt="prod" srcset="">
                         </div>
-
                         <div class="product">
-                            <img class="product-img" src="" alt="prod" srcset="">
-                            <div class="product-descrip">
-                                <p class="book-author"></p>
-                                <p class="book-title"></p>
-                                <div class="buy-price">
-                                    <a href="" class="buy-book"></a>
-                                    <p class="price"></p>
-                                </div>
-                            </div>
+                            <img style="width: 100%; height: 100%;"
+                                src="https://ozon-st.cdn.ngenix.net/multimedia/1021359122.jpg" alt="prod" srcset="">
                         </div>
-
                         <div class="product">
-                            <img class="product-img" src="" alt="prod" srcset="">
-                            <div class="product-descrip">
-                                <p class="book-author"></p>
-                                <p class="book-title"></p>
-                                <div class="buy-price">
-                                    <a href="" class="buy-book"></a>
-                                    <p class="price"></p>
-                                </div>
-                            </div>
+                            <img style="width: 100%; height: 100%;"
+                                src="https://ozon-st.cdn.ngenix.net/multimedia/1021359122.jpg" alt="prod" srcset="">
+                        </div>
+                        <div class="product">
+                            <img style="width: 100%; height: 100%;"
+                                src="https://ozon-st.cdn.ngenix.net/multimedia/1021359122.jpg" alt="prod" srcset="">
                         </div>
                     </div>
                 </div>
@@ -217,8 +257,17 @@
 
         </section>
 
+        <footer class="footer" role="contentinfo">
+            <div class="dev-info">© 2020 Danila Ptukha - Authors Library</div>
+        </footer>
+        <div class="to-top"></div>
+
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script>
+        $('.preloader').fadeOut().end().delay(400).fadeOut('slow');
+    </script>
+    <script src="scripts/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
     <script type="text/javascript" src="scripts/animate/jquery.waypoints.min.js"></script>
     <script type="text/javascript" src="scripts/animate/animate-css.js"></script>
     <script src="scripts/main.js"></script>
