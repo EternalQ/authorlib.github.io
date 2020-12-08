@@ -95,12 +95,12 @@
 </head>
 
 <body class="body">
-    <div class="preloader">
+    <!-- <div class="preloader">
         <div class="preloader__row">
             <div class="preloader__item"></div>
             <div class="preloader__item"></div>
         </div>
-    </div>
+    </div> -->
     <div class="wrapper">
         <!-- Fixed header with animting -->
         <header>
@@ -168,7 +168,7 @@
 
                     <div class="services">
                         <!-- книги сайта -->
-                        <a href="#" class="order our-authors">
+                        <a href="#merch" class="order our-authors">
                             <i class="fas fa-book-reader"></i>
                             <h3 class="order-title">Наши книги</h3>
                             <p class="order-descrip">Мы предоставляем эксклюзивную возможность заказать печатные книги
@@ -176,7 +176,13 @@
                         </a>
 
                         <!-- пользовательские книги -->
-                        <a href="#" class="order custom-book">
+                        <div class="popup custom-book-popup">
+                            <div class="popup-content">
+                                <div class="close"></div>
+                                
+                            </div>
+                        </div>
+                        <a class="order custom-book">
                             <i class="fas fa-feather-alt"></i>
                             <h3 class="order-title">Ваши книги</h3>
                             <p class="order-descrip">Если у вас есть книга в электронном варианте, которую вы бы хотели
@@ -263,10 +269,10 @@
         <div class="to-top"></div>
 
     </div>
+    <!-- <script>
+        // $('.preloader').fadeOut().end().delay(400).fadeOut('slow');
+    </script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script>
-        $('.preloader').fadeOut().end().delay(400).fadeOut('slow');
-    </script>
     <script src="scripts/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
     <script type="text/javascript" src="scripts/animate/jquery.waypoints.min.js"></script>
     <script type="text/javascript" src="scripts/animate/animate-css.js"></script>
