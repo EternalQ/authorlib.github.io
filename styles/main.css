@@ -34,6 +34,29 @@ h3.title::before {
     animation-duration: 0.8s;
 }
 
+.popup {
+    display: none;
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    top: 0;
+    left: 0;
+    z-index: 10000;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.flex {
+    display: flex;
+}
+
 /* body settings */
 html,
 body {
@@ -67,7 +90,7 @@ header {
     align-items: center;
     padding: 0px 20px;
     transition: 0.3s;
-    background: rgba(36, 36, 36, 0.781);
+    background: rgba(36, 36, 36, 0);
 }
 
 .header-wrapper.top {
@@ -123,7 +146,7 @@ ul {
 /* banner */
 .banner {
     color: #fff;
-    padding-bottom: 70px;
+    /* padding-bottom: 70px; */
     position: relative;
 }
 

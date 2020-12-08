@@ -90,27 +90,27 @@
       this.positionX + (isNaN(this.positionX)? '' : 'px') + ' ' +
       this.positionY + (isNaN(this.positionY)? '' : 'px');
 
-    if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
-      if (this.imageSrc && this.iosFix && !this.$element.is('img')) {
-        this.$element.css({
-          backgroundImage: 'url(' + this.imageSrc + ')',
-          backgroundSize: 'cover',
-          backgroundPosition: this.position
-        });
-      }
-      return this;
-    }
+    // if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
+    //   if (this.imageSrc && this.iosFix && !this.$element.is('img')) {
+    //     this.$element.css({
+    //       backgroundImage: 'url(' + this.imageSrc + ')',
+    //       backgroundSize: 'cover',
+    //       backgroundPosition: this.position
+    //     });
+    //   }
+    //   return this;
+    // }
 
-    if (navigator.userAgent.match(/(Android)/)) {
-      if (this.imageSrc && this.androidFix && !this.$element.is('img')) {
-        this.$element.css({
-          backgroundImage: 'url(' + this.imageSrc + ')',
-          backgroundSize: 'cover',
-          backgroundPosition: this.position
-        });
-      }
-      return this;
-    }
+    // if (navigator.userAgent.match(/(Android)/)) {
+    //   if (this.imageSrc && this.androidFix && !this.$element.is('img')) {
+    //     this.$element.css({
+    //       backgroundImage: 'url(' + this.imageSrc + ')',
+    //       backgroundSize: 'cover',
+    //       backgroundPosition: this.position
+    //     });
+    //   }
+    //   return this;
+    // }
 
     this.$mirror = $('<div />').prependTo(this.mirrorContainer);
 
@@ -133,7 +133,7 @@
       overflow: 'hidden'
     });
 
-    this.$slider.addClass('parallax-slider').one('load', function() {
+    this.$slider.addClass('parallax-slider').on('load', function() {
       if (!self.naturalHeight || !self.naturalWidth) {
         self.naturalHeight = this.naturalHeight || this.height || 1;
         self.naturalWidth  = this.naturalWidth  || this.width  || 1;
