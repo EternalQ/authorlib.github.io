@@ -5,83 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Authors Library</title>
-    <style>
-        body {
-            margin: 0;
-        }
 
-        .preloader {
-            /*фиксированное позиционирование*/
-            position: fixed;
-            /* координаты положения */
-            left: 0;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            /* фоновый цвет элемента */
-            background: #e0e0e0;
-            /* размещаем блок над всеми элементами на странице (это значение должно быть больше, чем у любого другого позиционированного элемента на странице) */
-            z-index: 1001;
-        }
-
-        .preloader__row {
-            position: relative;
-            top: 50%;
-            left: 50%;
-            width: 70px;
-            height: 70px;
-            margin-top: -35px;
-            margin-left: -35px;
-            text-align: center;
-            animation: preloader-rotate 2s infinite linear;
-        }
-
-        .preloader__item {
-            position: absolute;
-            display: inline-block;
-            top: 0;
-            background-color: #337ab7;
-            border-radius: 100%;
-            width: 35px;
-            height: 35px;
-            animation: preloader-bounce 2s infinite ease-in-out;
-        }
-
-        .preloader__item:last-child {
-            top: auto;
-            bottom: 0;
-            animation-delay: -1s;
-        }
-
-        @keyframes preloader-rotate {
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        @keyframes preloader-bounce {
-
-            0%,
-            100% {
-                transform: scale(0);
-            }
-
-            50% {
-                transform: scale(1);
-            }
-        }
-
-        .loaded_hiding .preloader {
-            transition: 0.3s opacity;
-            opacity: 0;
-        }
-
-        .loaded .preloader {
-            display: none;
-        }
-    </style>
-
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" /> -->
+    <link rel="preloader"
+        href="https://get.wallhere.com/photo/building-interior-books-library-knowledge-shelves-interior-design-aisle-bookselling-public-library-72435.jpg"
+        as="image">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="scripts/animate/animate.css">
@@ -95,12 +22,6 @@
 </head>
 
 <body class="body">
-    <div class="preloader">
-        <div class="preloader__row">
-            <div class="preloader__item"></div>
-            <div class="preloader__item"></div>
-        </div>
-    </div>
     <div class="wrapper">
         <!-- Fixed header with animting -->
         <header>
@@ -253,7 +174,10 @@
                         <h4>Вы можете найти нас в офисе или связаться сами</h4>
 
                         <div class="cont-content">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d64675.846749233526!2d150.77092816347403!3d59.56440621097856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x596984812d524ae9%3A0x39c94ce7e19c065b!2z0JzQsNCz0LDQtNCw0L0sINCc0LDQs9Cw0LTQsNC90YHQutCw0Y8g0L7QsdC7Liwg0KDQvtGB0YHQuNGP!5e0!3m2!1sru!2sby!4v1607626500021!5m2!1sru!2sby" width="600" height="450" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d64675.846749233526!2d150.77092816347403!3d59.56440621097856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x596984812d524ae9%3A0x39c94ce7e19c065b!2z0JzQsNCz0LDQtNCw0L0sINCc0LDQs9Cw0LTQsNC90YHQutCw0Y8g0L7QsdC7Liwg0KDQvtGB0YHQuNGP!5e0!3m2!1sru!2sby!4v1607626500021!5m2!1sru!2sby"
+                                width="600" height="450" style="border:0;" allowfullscreen="" aria-hidden="false"
+                                tabindex="0"></iframe>
 
                             <div class="cont-wrap">
                                 <div class="cw">
@@ -311,10 +235,8 @@
             $(".popup").css("display", "flex");
             $(".popup").addClass(buf);
         }
-
-       
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback">
     </script>
     <script src="scripts/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
     <script type="text/javascript" src="scripts/animate/jquery.waypoints.min.js"></script>
