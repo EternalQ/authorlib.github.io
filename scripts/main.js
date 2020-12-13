@@ -26,6 +26,9 @@ $(document).ready(function () {
         buf = "new-author-popup";
     })
     $(".op").on('click', function showpop() {
+        $(".form-inp").each(function (param) {
+            $(this).val() = '';
+        })
         $(".popup").fadeIn(200);
         $(".popup").css("display", "flex");
         $(".popup").addClass(buf);
