@@ -394,6 +394,12 @@ img.book-img {
     display: none;
 }
 
+@media screen and (max-width: 500px) {
+    .prod-img {
+        max-height: 500px;
+    }
+}
+
 /* contacts */
 .contact {
     display: flex;
