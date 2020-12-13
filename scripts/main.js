@@ -3,7 +3,7 @@ $(document).ready(function () {
         // $("body").css("overflow", "hidden")
         $(".header-wrapper").addClass("adopt-head")
         $("#examp").fadeIn(400)
-        $(".nav-link").click(function (e) { 
+        $(".nav-link").click(function (e) {
             $("#examp").fadeOut(400)
             $(".header-wrapper").removeClass("adopt-head")
         });
@@ -30,8 +30,18 @@ $(document).ready(function () {
         $(".popup").css("display", "flex");
         $(".popup").addClass(buf);
     })
-    $(".close").click(function (e) { 
+    $(".close").click(function (e) {
         $(".popup").fadeOut(200).removeClass(buf);
+    });
+    var flag = 0;
+    $("#submit").click(function (e) {
+        $(".form-inp").each(function (param) {
+            if ($(this).val() == '')
+                flag = 1;
+        })
+        if (flag != 1) {
+            $(".popup").fadeOut(200).removeClass(buf);
+        }
     });
     $(document).mouseup(function (e) {
         var pop = $(".popup-content");
