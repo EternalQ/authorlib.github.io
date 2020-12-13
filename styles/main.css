@@ -396,7 +396,7 @@ img.book-img {
 
 @media screen and (max-width: 500px) {
     .prod-img {
-        max-height: 500px;
+        max-width: 366px;
     }
 }
 
