@@ -1,5 +1,6 @@
 /* Generic */
 * {
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
 
@@ -8,6 +9,7 @@
     max-width: 1024px;
     width: 1024px;
     margin: 50px auto;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
 
@@ -35,10 +37,13 @@ h3.title::before {
 }
 
 .animated {
+    -webkit-animation-duration: 0.8s;
     animation-duration: 0.8s;
 }
 
 .flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 
@@ -70,10 +75,18 @@ header {
     font-family: "Century Gothic";
     height: 50px;
     color: white;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     padding: 0px 20px;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
     transition: 0.3s;
     background: rgba(36, 36, 36);
 }
@@ -87,17 +100,24 @@ header {
 .header-wrapper.adopt-head {
     height: 100vh;
     background: rgb(36, 36, 36);
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     padding: 20px;
 }
 
-.header-wrapper.adopt-head > .logo {
+.header-wrapper.adopt-head>.logo {
     width: 40px;
     max-height: 40px;
 }
 
 .logo-humb {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
 }
 
@@ -105,9 +125,17 @@ header {
     height: 100%;
     width: auto;
     font-size: 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-transition: 0.4s;
+    -o-transition: 0.4s;
     transition: 0.4s;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
     flex-grow: 1;
 }
 
@@ -124,12 +152,18 @@ nav {
 ul {
     width: 100%;
     text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
 }
 
 .nav-link {
     text-transform: uppercase;
+    -webkit-transition: 0.4s;
+    -o-transition: 0.4s;
     transition: 0.4s;
 }
 
@@ -141,7 +175,12 @@ ul {
     display: none;
     max-height: 50px;
     height: 27px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
 }
 
@@ -155,21 +194,32 @@ ul {
     .logo-humb {
         min-width: 100%;
     }
+
     .humb {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
     }
 
     nav {
         min-width: 100%;
+        -webkit-transform: translateY(-80%);
+        -ms-transform: translateY(-80%);
         transform: translateY(-80%);
     }
+
     .nav-link {
         font-size: 28px;
     }
+
     .examp {
         display: none;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
     }
+
     .examp li {
         margin-bottom: 15px;
     }
@@ -198,6 +248,8 @@ ul {
     top: 50%;
     left: 50%;
     width: 100%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
 
@@ -205,6 +257,12 @@ h1.banner-item {
     margin-bottom: 70px;
     text-transform: uppercase;
     font-size: 72px;
+}
+
+@media screen and (max-width: 426px) {
+    h1.banner-item {
+        font-size: 60px;
+    }
 }
 
 .banner-item {
@@ -227,6 +285,8 @@ p.banner-item {
     text-transform: uppercase;
     border: 2px solid #f2d25b;
     letter-spacing: 1px;
+    -webkit-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
     transition: 0.3s ease-in-out;
 }
 
@@ -241,11 +301,15 @@ p.banner-item {
 .about {
     width: 100%;
     background: #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 
 .about-text {
     width: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 
@@ -263,7 +327,12 @@ img.book-img {
 
 @media screen and (max-width: 1024px) {
     .about-text {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
     }
 
@@ -280,10 +349,13 @@ img.book-img {
 .service {
     width: 100%;
     background: #d6d6d6;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 
 .services {
+    display: -ms-grid;
     display: grid;
     grid-gap: 10px;
     grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
@@ -291,6 +363,7 @@ img.book-img {
 
 .order {
     display: block;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     /* width: 300px; */
     height: auto;
@@ -301,6 +374,8 @@ img.book-img {
     color: black;
     cursor: pointer;
     border-radius: 10px;
+    -webkit-transition: 0.4s;
+    -o-transition: 0.4s;
     transition: 0.4s;
 }
 
@@ -325,10 +400,13 @@ img.book-img {
 .authors {
     width: 100%;
     background: #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 
 .atrs {
+    display: -ms-grid;
     display: grid;
     grid-gap: 10px;
     grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
@@ -367,6 +445,8 @@ img.book-img {
 
 /* merch */
 .merch {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     background-color: #d6d6d6;
 }
@@ -402,6 +482,8 @@ img.book-img {
 
 /* contacts */
 .contact {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     background: #fff;
 }
@@ -412,13 +494,14 @@ img.book-img {
 }
 
 .cont-content {
+    display: -ms-grid;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
-.cont-content > iframe {
-    width:100%;
-    min-height:300px
+.cont-content>iframe {
+    width: 100%;
+    min-height: 300px
 }
 
 .cont-wrap {
@@ -458,8 +541,14 @@ footer.footer {
     height: 60px;
     background-color: #444;
     color: #999;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
 }
 
@@ -473,7 +562,11 @@ footer.footer {
     top: 0;
     left: 0;
     z-index: 10000;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
 }
 
@@ -485,6 +578,37 @@ footer.footer {
     z-index: 99999;
 }
 
+.close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 32px;
+    height: 32px;
+    opacity: 0.3;
+}
+
+.close:hover {
+    opacity: 1;
+}
+
+.close:before,
+.close:after {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 33px;
+    width: 2px;
+    background-color: #333;
+}
+
+.close:before {
+    transform: rotate(45deg);
+}
+
+.close:after {
+    transform: rotate(-45deg);
+}
+
 .form {
     max-width: 400px;
     padding: 30px;
@@ -493,7 +617,7 @@ footer.footer {
     height: calc(100% - 60px)
 }
 
-@media screen and (max-width: 426px) {
+@media screen and (max-width: 424px) {
     .form {
         max-width: 100%;
         margin: 40px;
@@ -525,6 +649,8 @@ footer.footer {
     background: none;
     border-width: 0;
     border-bottom: 2px solid black;
+    -webkit-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
     transition: all 0.2s ease;
 }
 
@@ -534,7 +660,11 @@ footer.footer {
     color: #9d959d;
     font-size: 20px;
     font-weight: 300;
+    -webkit-transform: translateY(-35px);
+    -ms-transform: translateY(-35px);
     transform: translateY(-35px);
+    -webkit-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
     transition: all 0.2s ease;
 }
 
@@ -544,6 +674,8 @@ footer.footer {
 }
 
 .form-row input:focus+label {
+    -webkit-transform: translateY(-60px);
+    -ms-transform: translateY(-60px);
     transform: translateY(-60px);
     margin-left: -14px;
     font-size: 14px;
@@ -567,4 +699,20 @@ footer.footer {
 .form p {
     margin: 0;
     padding-top: 10px;
+}
+
+@media screen and (max-width: 426px) {
+    .popup-content {
+        height: 100%;
+        width: 100%;
+    }
+
+    .form h3 {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    .form p {
+        margin-top: 30%;
+    }
 }
