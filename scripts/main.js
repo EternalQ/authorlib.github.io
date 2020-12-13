@@ -1,6 +1,4 @@
 $(document).ready(function () {
-    $('.preloader').fadeOut('slow');
-
     $(".humb").on('click', function () {
         // $("body").css("overflow", "hidden")
         $(".header-wrapper").addClass("adopt-head")
