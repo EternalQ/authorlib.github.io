@@ -27,7 +27,7 @@ $(document).ready(function () {
     })
     $(".op").on('click', function showpop() {
         $(".form-inp").each(function (param) {
-            $(this).val('');
+            $(this).val("");
         })
         $(".popup").fadeIn(200);
         $(".popup").css("display", "flex");
@@ -36,8 +36,8 @@ $(document).ready(function () {
     $(".close").click(function (e) {
         $(".popup").fadeOut(200).removeClass(buf);
     });
-    var flag = 0;
     $("#submit").click(function (e) {
+        var flag = 0;
         $(".form-inp").each(function (param) {
             if ($(this).val() == '')
                 flag = 1;
