@@ -4,7 +4,6 @@ $(document).ready(function () {
         $(".header-wrapper").addClass("adopt-head")
         $("#examp").fadeIn(400)
         $(".nav-link").click(function (e) { 
-            // e.preventDefault();
             $("#examp").fadeOut(400)
             $(".header-wrapper").removeClass("adopt-head")
         });
@@ -12,12 +11,12 @@ $(document).ready(function () {
 
     $(".banner-item").animatedX("fadeInDown", "fadeOut");
     // $(".button").animatedX("fadeIn", "fadeOut");
-    $(".title").animatedX("fadeInDown", "fadeOut")
-    $(".about-text").animatedX("fadeInRight", "fadeOutLeft");
-    $(".services").animatedX("fadeInLeft", "fadeOutRight");
-    $(".atrs").animatedX("fadeInRight", "fadeOutLeft");
-    $(".goods").animated("fadeInLeft", "fadeOutRight");
-    $(".contacts").animatedX("fadeInRight", "fadeOutLeft");
+    // $(".title").animatedX("fadeInDown", "fadeOut")
+    // $(".about-text").animatedX("fadeInRight", "fadeOutLeft");
+    // $(".services").animatedX("fadeInLeft", "fadeOutRight");
+    // $(".atrs").animatedX("fadeInRight", "fadeOutLeft");
+    // $(".goods").animated("fadeInLeft", "fadeOutRight");
+    // $(".contacts").animatedX("fadeInRight", "fadeOutLeft");
 
     var buf;
     $(".custom-book").on("click", function () {
@@ -31,6 +30,9 @@ $(document).ready(function () {
         $(".popup").css("display", "flex");
         $(".popup").addClass(buf);
     })
+    $(".close").click(function (e) { 
+        $(".popup").fadeOut(200).removeClass(buf);
+    });
     $(document).mouseup(function (e) {
         var pop = $(".popup-content");
         if (e.target != pop[0] && pop.has(e.target).length === 0)
