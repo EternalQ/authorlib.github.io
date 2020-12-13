@@ -1,26 +1,42 @@
 $(document).ready(function () {
     $('.preloader').fadeOut('slow');
-    // $(".parallax").parallax();
-    // new universalParallax().init();
+
+    $(".humb").on('click', function () {
+        // $("body").css("overflow", "hidden")
+        $(".header-wrapper").addClass("adopt-head")
+        $("#examp").fadeIn(400)
+        $(".nav-link").click(function (e) { 
+            // e.preventDefault();
+            $("#examp").fadeOut(400)
+            $(".header-wrapper").removeClass("adopt-head")
+        });
+    })
 
     $(".banner-item").animatedX("fadeInDown", "fadeOut");
-    $(".button").animatedX("fadeIn", "fadeOut");
-
+    // $(".button").animatedX("fadeIn", "fadeOut");
     $(".title").animatedX("fadeInDown", "fadeOut")
     $(".about-text").animatedX("fadeInRight", "fadeOutLeft");
     $(".services").animatedX("fadeInLeft", "fadeOutRight");
     $(".atrs").animatedX("fadeInRight", "fadeOutLeft");
     $(".goods").animated("fadeInLeft", "fadeOutRight");
+    $(".contacts").animatedX("fadeInRight", "fadeOutLeft");
 
-    $(".custom-book").on('click', function () {
-        $(".custom-book-popup").fadeIn(200);
+    var buf;
+    $(".custom-book").on("click", function () {
+        buf = "custom-book-popup";
+    });
+    $(".new-author").on("click", function () {
+        buf = "new-author-popup";
+    })
+    $(".op").on('click', function showpop() {
+        $(".popup").fadeIn(200);
         $(".popup").css("display", "flex");
-
+        $(".popup").addClass(buf);
     })
     $(document).mouseup(function (e) {
         var pop = $(".popup-content");
         if (e.target != pop[0] && pop.has(e.target).length === 0)
-            $(".custom-book-popup").fadeOut(200);
+            $(".popup").fadeOut(200).removeClass(buf);
     })
 
     $('.owl-carousel').owlCarousel({
@@ -41,7 +57,8 @@ $(document).ready(function () {
             },
             600: {
                 items: 2,
-                stagePadding: 50
+                stagePadding: 50,
+                margin: 60
             },
             1025: {
                 items: 4,
@@ -75,9 +92,9 @@ $(document).ready(function () {
             // console.log(pct);
         }
 
-        var forRGB = "" + Math.round(pct) / 100;
-        rgba = "rgba(36, 36, 36, " + forRGB + ")";
-        $(".header-wrapper").css("background", rgba);
+        // var forRGB = "" + Math.round(pct) / 100;
+        // rgba = "rgba(36, 36, 36, " + forRGB + ")";
+        // $(".header-wrapper").css("background", rgba);
         // console.log(rgba);
     })
 })
