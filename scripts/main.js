@@ -1,23 +1,52 @@
 $(document).ready(function () {
-    $(".humb").on('click', function () {
-        // $("body").css("overflow", "hidden")
-        $(".header-wrapper").addClass("adopt-head")
-        $("#examp").fadeIn(400)
-        $(".nav-link").click(function (e) {
-            $("#examp").fadeOut(400)
-            $(".header-wrapper").removeClass("adopt-head")
-        });
-    })
+    // использование xml
+    var xml = "<?xml version = '1.0'?>" +
+              "<footer>" +
+              "<author>Danila Ptukha</author>" +
+              "<projectname>Authors Library</projectname>" + 
+              "<year>2020</year>"+
+              "</footer>";
+    var parser = new DOMParser();
+    var xmlDoc = parser.parseFromString(xml, "text/xml");
+    var name = xmlDoc.getElementsByTagName("author");
+    var pjtitle = xmlDoc.getElementsByTagName("projectname");
+    var year = xmlDoc.getElementsByTagName("year");
+    var title = document.getElementsByClassName("dev-info");
+    var string = "© " + year[0].innerHTML + " " + name[0].innerHTML + " - " + pjtitle[0].innerHTML;
+    title[0].innerHTML = string;
 
+    // работа с гамбургер меню
+    $(".humb").click(function (e) {
+        $(".header-wrapper").toggleClass("adopt-head")
+    });
+    $(".nav-link").click(function (e) {
+        $(".header-wrapper").removeClass("adopt-head")
+    });
+
+    // скроллинг по нажатию
+    $("[data-scroll]").on("click", function (event) {
+        event.preventDefault();
+
+        let elementID = $(this).data("scroll");
+        let elementOffset = $(elementID).offset().top;
+
+        $("html, body").animate({
+            scrollTop: elementOffset
+        }, 'fast');
+
+    });
+
+    // анимации waypoint + animate.css
     $(".banner-item").animatedX("fadeInDown", "fadeOut");
-    // $(".button").animatedX("fadeIn", "fadeOut");
-    // $(".title").animatedX("fadeInDown", "fadeOut")
-    // $(".about-text").animatedX("fadeInRight", "fadeOutLeft");
-    // $(".services").animatedX("fadeInLeft", "fadeOutRight");
-    // $(".atrs").animatedX("fadeInRight", "fadeOutLeft");
+    $(".button").animatedX("fadeIn", "fadeOut");
+    $(".title").animatedX("fadeInDown", "fadeOut");
+    $(".about-text").animatedX("fadeInRight", "fadeOutLeft");
+    $(".services").animatedX("fadeInLeft", "fadeOutRight");
+    $(".atrs").animatedX("fadeInRight", "fadeOutLeft");
     // $(".goods").animated("fadeInLeft", "fadeOutRight");
-    // $(".contacts").animatedX("fadeInRight", "fadeOutLeft");
+    $(".contacts").animatedX("fadeInRight", "fadeOutLeft");
 
+    // работа с popup
     var buf;
     $(".custom-book").on("click", function () {
         buf = "custom-book-popup";
@@ -26,6 +55,9 @@ $(document).ready(function () {
         buf = "new-author-popup";
     })
     $(".op").on('click', function showpop() {
+        $(".form-inp").each(function (param) {
+            $(this).val("");
+        })
         $(".popup").fadeIn(200);
         $(".popup").css("display", "flex");
         $(".popup").addClass(buf);
@@ -33,8 +65,8 @@ $(document).ready(function () {
     $(".close").click(function (e) {
         $(".popup").fadeOut(200).removeClass(buf);
     });
-    var flag = 0;
     $("#submit").click(function (e) {
+        var flag = 0;
         $(".form-inp").each(function (param) {
             if ($(this).val() == '')
                 flag = 1;
@@ -49,6 +81,7 @@ $(document).ready(function () {
             $(".popup").fadeOut(200).removeClass(buf);
     })
 
+    // настройка слайдера owl carousel
     $('.owl-carousel').owlCarousel({
         margin: 50,
         loop: true,
@@ -59,7 +92,6 @@ $(document).ready(function () {
         center: false,
         nav: false,
         dots: false,
-        // autoWidth: true,
         responsiveClass: true,
         responsive: {
             0: {
@@ -76,16 +108,11 @@ $(document).ready(function () {
             },
             1200: {
                 items: 5
-            },
-            // 1400: {
-            //     items: 5,
-            //     stagePadding: 100
-            // }
+            }
         }
     });
 
-    var bh = $(".banner").outerHeight();
-    var pct = 0;
+    // контроль верхнего положения страницы для header
     $(document).scroll(function () {
         var top = $('header').offset().top;
         if (top == 0) {
@@ -93,18 +120,5 @@ $(document).ready(function () {
         } else {
             $(".header-wrapper").removeClass('top')
         }
-
-        if (top < bh) {
-            pct = top / bh * 100;
-            // console.log(pct);
-        } else {
-            pct = 100;
-            // console.log(pct);
-        }
-
-        // var forRGB = "" + Math.round(pct) / 100;
-        // rgba = "rgba(36, 36, 36, " + forRGB + ")";
-        // $(".header-wrapper").css("background", rgba);
-        // console.log(rgba);
     })
 })

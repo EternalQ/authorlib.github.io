@@ -1,4 +1,5 @@
 (function ($) {
+	// фунция для эффекта при появлении
 	$.fn.animatedX = function (inEffect) {
 		$(this).css("opacity", "0").addClass("animated").waypoint(function (dir) {
 			if (dir === "down") {
@@ -9,6 +10,7 @@
 		});
 	};
 
+	// фунция для эффектов при появлении и исчезании
 	$.fn.animated = function (inEffect, outEffect) {
 		$(this).css("opacity", "0").addClass("animated").waypoint(function (dir) {
 			if (dir === "down") {

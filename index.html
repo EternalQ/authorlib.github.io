@@ -11,27 +11,27 @@
         as="image">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="scripts/animate/animate.css">
+    <link rel="stylesheet" href="styles/animate.css">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/cssReset.css">
-    <link rel="stylesheet" href="scripts/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="scripts/plugins/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css">
     <script src="https://use.fontawesome.com/5756db0fd7.js"></script>
     <script src="https://kit.fontawesome.com/7c6570d43b.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="scripts/parallax.js-1.5.0/parallax.min.js"></script>
+    <script src="scripts/plugins/parallax.js-1.5.0/parallax.min.js"></script>
 </head>
 
 <body class="body">
     <div class="wrapper">
-        <!-- Fixed header with animting -->
+        <!-- Fixed header with animating -->
         <header>
 
             <div class="header-wrapper top">
 
                 <div class="logo-humb">
                     <div class="logo">
-                        <!-- <img src="" alt="logo image" class="logo-img"> -->
-                        <i class="fas fa-book-open    "></i>
+                        <img src="resources/book-open-solid.svg" alt="logo image" class="logo-img">
+                        <!-- <i class="fas fa-book-open    "></i> -->
                     </div>
 
                     <div class="humb">
@@ -44,12 +44,12 @@
                 <!-- Site navigation -->
                 <nav>
                     <ul id="examp" class="examp">
-                        <li><a class="nav-link" href="#">главная</a></li>
-                        <li><a class="nav-link" href="#about">о нас</a></li>
-                        <li><a class="nav-link" href="#service">Услуги</a></li>
-                        <li><a class="nav-link" href="#authors">об авторах</a></li>
-                        <li><a class="nav-link" href="#merch">товары</a></li>
-                        <li><a class="nav-link" href="#contact">связь</a></li>
+                        <li><a class="nav-link" data-scroll="#top">главная</a></li>
+                        <li><a class="nav-link" data-scroll="#about">о нас</a></li>
+                        <li><a class="nav-link" data-scroll="#service">Услуги</a></li>
+                        <li><a class="nav-link" data-scroll="#authors">об авторах</a></li>
+                        <li><a class="nav-link" data-scroll="#merch">товары</a></li>
+                        <li><a class="nav-link" data-scroll="#contact">связь</a></li>
                     </ul>
                 </nav>
 
@@ -57,7 +57,9 @@
 
         </header>
 
-        <div class="parallax banner" data-parallax="scroll" data-speed="0.3" data-image-src="resources/lib.jpg">
+        <!-- Parallaxing banner -->
+        <div id="top" class="parallax banner" data-parallax="scroll" data-speed="0.3"
+            data-image-src="resources/lib.jpg">
             <div class="banner-conteiner">
                 <h1 class="banner-item "><span class="color">authors</span> library
                 </h1>
@@ -65,6 +67,7 @@
             </div>
         </div>
 
+        <!-- all content -->
         <section class="content">
 
             <!-- раздел информации -->
@@ -73,9 +76,8 @@
                     <h3 class="title">о нас</h3>
 
                     <div class="about-text">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam commodi quibusdam
-                            molestiae placeat, cumque quidem. Voluptas placeat rem dolores excepturi dignissimos
-                            tenetur illo cum. Repellat, corrupti. Ipsum iure quibusdam consectetur.
+                        <p>Наши услуги ориентированы на индивидуальное взаимодействие с пользователем, поэтому перед
+                            заказом или покупой мы хотим пообщаться с вами лично.<br>
                             Eos fuga quam nulla, neque perspiciatis non iure sit ipsa nisi voluptas maiores rem
                             quidem omnis porro asperiores culpa vero reprehenderit eveniet. Alias aut voluptatem
                             necessitatibus dolore quaerat quidem praesentium!
@@ -125,22 +127,25 @@
             <!-- раздел сотрудников -->
             <section id="authors" class="authors">
                 <div class="authors-wrapper wrap">
-                    <h3 class="title">наши авторы</h3>
+                    <h3 class="title">наши сотрудники</h3>
 
                     <div class="atrs">
                         <div class="atr">
-                            <img src="resources/dostoevskii.jpg" alt="dostoevsii" class="atr-img">
-                            <p class="atr-name">Фёдор Достоевский</p>
+                            <img src="resources/pushkin.jpg" alt="pushkin" class="atr-img">
+                            <p class="atr-name">Александр Пушкин</p>
+                            <p class="atr-type">Писатель</p>
                         </div>
 
                         <div class="atr">
                             <img src="resources/chehov.jpg" alt="chehov" class="atr-img">
                             <p class="atr-name">Антон Чехов</p>
+                            <p class="atr-type">Писатель</p>
                         </div>
 
                         <div class="atr">
-                            <img src="resources/pushkin.jpg" alt="pushkin" class="atr-img">
-                            <p class="atr-name">Александр Пушкин</p>
+                            <img src="resources/dostoevskii.jpg" alt="dostoevsii" class="atr-img">
+                            <p class="atr-name">Фёдор Достоевский</p>
+                            <p class="atr-type">Писатель</p>
                         </div>
                     </div>
                 </div>
@@ -155,9 +160,9 @@
                     <div class="owl-carousel goods">
 
                         <div class="product op">
-                            <a href="javascript:showpop" class="op">
-                                <img class="prod-img"
-                                    src="https://ozon-st.cdn.ngenix.net/multimedia/1021359122.jpg" alt="prod">
+                            <a href="javascript:showpop">
+                                <img class="prod-img" src="https://ozon-st.cdn.ngenix.net/multimedia/1021359122.jpg"
+                                    alt="prod">
                             </a>
                         </div>
                         <!--  -->
@@ -205,26 +210,29 @@
 
         </section>
 
+        <!-- just footer -->
+        <footer class="footer" role="contentinfo">
+            <div class="dev-info"></div>
+        </footer>
+
+        <!-- popup overlay -->
         <div class="popup">
             <div class="popup-content">
                 <div class="close"></div>
                 <form class="form">
                     <h3>Как с вами связаться?</h3>
                     <div class="form-row">
-                        <input class="form-inp" type="text" id="name" required autocomplete="off"><label for="name">Имя Фамилия</label>
+                        <input class="form-inp" type="text" id="name" required autocomplete="off"><label for="name">Имя
+                            Фамилия</label>
                     </div>
                     <div class="form-row">
-                        <input class="form-inp" type="text" id="email" required autocomplete="off"><label for="email">Email</label>
+                        <input class="form-inp" type="text" id="email" required autocomplete="off"><label
+                            for="email">Email</label>
                     </div>
                     <p><input id="submit" type="submit" value="Отправить"></p>
                 </form>
             </div>
         </div>
-
-        <footer class="footer" role="contentinfo">
-            <div class="dev-info">© 2020 Danila Ptukha - Authors Library</div>
-        </footer>
-        <div class="to-top"></div>
 
     </div>
 
@@ -238,9 +246,9 @@
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback">
     </script>
-    <script src="scripts/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
-    <script type="text/javascript" src="scripts/animate/jquery.waypoints.min.js"></script>
-    <script type="text/javascript" src="scripts/animate/animate-css.js"></script>
+    <script src="scripts/plugins/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="scripts/jquery.waypoints.min.js"></script>
+    <script type="text/javascript" src="scripts/animate-css.js"></script>
     <script src="scripts/main.js"></script>
 </body>
 
